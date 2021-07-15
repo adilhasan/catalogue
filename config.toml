@@ -1,0 +1,13 @@
+[database]
+file = "catalogue.db"
+get_path = "select path from catalogue where hash = ?1"
+create_catalogue = "Create table if not exists catalogue (id integer primary key autoincrement,title text,description text,size integer,path text,hash text,publisher text,extension text,created integer,read boolean)"
+insert_catalogue = "insert into catalogue(size, path, hash, extension, created, read) values(?1, ?2, ?3, ?4, ?5, ?6)"
+update_catalogue = "update catalogue set path = ?1 where hash = ?2"
+all_annotation = "select id, path, title, description, publisher, read from catalogue"
+before_annotation = "select id, path, title, description, publisher, read from catalogue where created <= ?1"
+after_annotation = "select id, path, title, description, publisher, read from catalogue where created >= ?1"
+interval_annotation = "select id, path, title, description, publisher, read from catalogue where created <= ?1 and created >= ?2"
+query_d = "description isnull"
+query_t = "title isnull"
+update_record = "update catalogue set title = ?1, description = ?2, publisher = ?3, read = ?4 where id = ?5"
