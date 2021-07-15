@@ -21,3 +21,16 @@ categorise [-c <config>] annotate <file>
 ```
 Takes as input a JSON file `<file>` that contains the records to be annotated. The structure of the JSON file is the same as output by the 'list' subcommand. 
 
+## Build the code
+1. Download the package.
+2. Run the command;
+```
+cargo build
+```
+
+## Running the code
+You can run the program from cargo with the command:
+```
+cargo run -- --help
+```
+to get help. To run 'scan', 'list' or 'annotate', just replace the '--help' with the subcommand.
